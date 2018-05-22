@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import py.gov.asuncion.rrhh.model.Person;
 
 /**
  *
@@ -24,7 +25,7 @@ public class ExampleController {
     //Primera forma
     @GetMapping("/exampleString")
     public String exampleString(Model model){
-        model.addAttribute("name", "Vicente");
+        model.addAttribute("person", new Person("Vicente", 37));
         return EXAMPLE_VIEW;
     }
     
@@ -32,7 +33,7 @@ public class ExampleController {
     @GetMapping("/exampleMAV")
     public ModelAndView exampleMAV(){
         ModelAndView mav = new ModelAndView(EXAMPLE_VIEW);
-        mav.addObject("name", "Jesus");
+        mav.addObject("person", new Person("Carlos", 25));
         return mav;
     }
 }
