@@ -3,12 +3,25 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
-        <title>HELLO</title>
+        <title>HELLO 2</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <h1>Nombre <span th:text="${person.name}"></span> !!!!</h1>
-        <h3>Edad <span th:text="${person.age}"></span> !!!!</h3>
+        <h1>Lista</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody th:each="person : ${people}">
+                <tr>
+                    <th th:text="${person.name}">NAME</th>
+                    <th th:text="${person.age}">AGE</th>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>

@@ -5,6 +5,8 @@
  */
 package py.gov.asuncion.rrhh.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,21 +21,37 @@ import py.gov.asuncion.rrhh.model.Person;
 @Controller
 @RequestMapping("/example")
 public class ExampleController {
-    
+
     public static final String EXAMPLE_VIEW = "example";
 
     //Primera forma
     @GetMapping("/exampleString")
-    public String exampleString(Model model){
-        model.addAttribute("person", new Person("Vicente", 37));
+    public String exampleString(Model model) {
+        model.addAttribute("people", getPeople());
         return EXAMPLE_VIEW;
     }
-    
+
     //Segunda Forma
     @GetMapping("/exampleMAV")
-    public ModelAndView exampleMAV(){
+    public ModelAndView exampleMAV() {
         ModelAndView mav = new ModelAndView(EXAMPLE_VIEW);
-        mav.addObject("person", new Person("Carlos", 25));
+        mav.addObject("people", getPeople());
         return mav;
+    }
+
+    private List<Person> getPeople() {
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Vicente", 37));
+        people.add(new Person("Carlos", 37));
+        people.add(new Person("Fernando", 37));
+        people.add(new Person("Jose", 37));
+        people.add(new Person("Robert", 37));
+        people.add(new Person("Cesar", 37));
+        people.add(new Person("Rolo", 37));
+        people.add(new Person("Gloria", 37));
+        people.add(new Person("Judith", 37));
+        people.add(new Person("Perla", 37));
+        people.add(new Person("Arami", 37));
+        return people;
     }
 }
