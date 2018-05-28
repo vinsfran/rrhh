@@ -2,3 +2,17 @@ spring:
     devtools:
         restart:
             additional-paths: .
+    datasource:
+        url: jdbc:postgresql://localhost:5432/rrhh
+        username: postgres
+        password: admin123    
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            naming:
+                strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                diealect: org.hibernate.dialect.PostgreSQL94Dialect
+            
