@@ -1,3 +1,6 @@
+server:
+    port: 8080
+
 spring:
     devtools:
         restart:
@@ -5,14 +8,25 @@ spring:
     datasource:
         url: jdbc:postgresql://localhost:5432/rrhh
         username: postgres
-        password: admin123    
+        password: admin123
+        driver-class-name: org.postgresql.Driver
     jpa:
         show-sql: true
         hibernate:
             ddl-auto: update
             naming:
-                strategy: org.hibernate.cfg.ImprovedNamingStrategy
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
         properties:
             hibernate:
-                diealect: org.hibernate.dialect.PostgreSQL94Dialect
-            
+                dialect: org.hibernate.dialect.PostgreSQL9Dialect
+                format_sql: true
+#                temp:
+#                    use_jdbc_metadata_defaults: false
+        
+#       spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
+#        database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+# Hibernate properties
+#spring.jpa.database = org.hibernate.dialect.PostgreSQLDialect
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+
+
