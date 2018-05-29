@@ -19,7 +19,7 @@ import py.gov.asuncion.rrhh.service.CourseService;
  *
  * @author vinsfran
  */
-@Service("courseService")
+@Service("courseServiceImpl")
 public class CourseServiceImpl implements CourseService {
 
     private static final Log LOG = LogFactory.getLog(CourseServiceImpl.class);
