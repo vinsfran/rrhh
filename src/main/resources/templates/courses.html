@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title>Courses</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1>Lista</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Hours</th>
+                </tr>
+            </thead>
+            <tbody th:each="course : ${courses}">
+                <tr>
+                    <th><span th:text="${course.name}">NAME</span></th>
+                    <th><span th:text="${course.description}">DESCRIPTION</span></th>
+                    <th><span th:text="${course.price}">PRICE</span></th>
+                    <th><span th:text="${course.hours}">HOURS</span></th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

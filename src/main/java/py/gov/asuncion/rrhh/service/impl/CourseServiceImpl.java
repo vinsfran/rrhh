@@ -30,11 +30,13 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> listAllCourses() {
+        LOG.info("Call: listAllCourses()");
         return courseJpaRepository.findAll();
     }
 
     @Override
     public Course addCourse(Course course) {
+        LOG.info("Call: addCourse()");
         //Guarda el objeto recibido y luego retorna el objeto guardado
         return courseJpaRepository.save(course);
     }
