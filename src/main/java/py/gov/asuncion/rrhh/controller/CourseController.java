@@ -25,23 +25,24 @@ import py.gov.asuncion.rrhh.service.CourseService;
 @Controller
 @RequestMapping("/courses")
 public class CourseController {
-    
+
     private static final Log LOG = LogFactory.getLog(CourseController.class);
-    
+
     public static final String COURSES_VIEW = "courses";
-    
+
     @Autowired
     @Qualifier("courseServiceImpl")
     private CourseService courseService;
-    
+
     @GetMapping("/listcourses")
     public ModelAndView listAllCourses() {
         LOG.info("Call: listAllCourses()");
         ModelAndView mav = new ModelAndView(COURSES_VIEW);
+        mav.addObject("course", new Course());
         mav.addObject("courses", courseService.listAllCourses());
         return mav;
     }
-    
+
     @PostMapping("/addcourse")
     public String addCourse(@ModelAttribute("course") Course course) {
         LOG.info("Call: addCourse()" + " -- Param: " + course.toString());
@@ -50,5 +51,5 @@ public class CourseController {
         //return "redirect:/listcourses";
         //localhost:8080/listcourses
     }
-    
+
 }

@@ -20,11 +20,12 @@ spring:
             hibernate:
                 dialect: org.hibernate.dialect.PostgreSQL9Dialect
                 format_sql: true
-#                temp:
-#                    use_jdbc_metadata_defaults: false
-        
+                temp:
+                    use_jdbc_metadata_defaults: false
+
+#       spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 #       spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
-#        database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+#       database-platform: org.hibernate.dialect.PostgreSQL94Dialect
 # Hibernate properties
 #spring.jpa.database = org.hibernate.dialect.PostgreSQLDialect
 #spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
